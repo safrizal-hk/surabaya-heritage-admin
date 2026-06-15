@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import UsersTable from "@/components/dashboard/UsersTable";
+import { API_URL } from "@/lib/api";
 
 export default async function UsersListPage() {
   const cookieStore = await cookies();
@@ -13,7 +14,7 @@ export default async function UsersListPage() {
   let initialUsers = [];
 
   try {
-    const usersRes = await fetch("http://localhost:4000/api/users", { headers, cache: "no-store" });
+    const usersRes = await fetch(`${API_URL}/users`, { headers, cache: "no-store" });
     if (usersRes.ok) {
       const json = await usersRes.json();
       initialUsers = json.success ? json.data : [];

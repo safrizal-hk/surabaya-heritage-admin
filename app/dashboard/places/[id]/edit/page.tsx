@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import PlaceEditForm from "@/components/dashboard/PlaceEditForm";
+import { API_URL } from "@/lib/api";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -23,9 +24,9 @@ export default async function EditPlacePage({ params }: PageProps) {
 
   try {
     const [placeRes, catsRes, photosRes] = await Promise.all([
-      fetch(`http://localhost:4000/api/places/${placeId}`, { headers, cache: "no-store" }),
-      fetch("http://localhost:4000/api/categories?all=true", { headers, cache: "no-store" }),
-      fetch("http://localhost:4000/api/places/photos/all", { headers, cache: "no-store" })
+      fetch(`${API_URL}/places/${placeId}`, { headers, cache: "no-store" }),
+      fetch(`${API_URL}/categories?all=true`, { headers, cache: "no-store" }),
+      fetch(`${API_URL}/places/photos/all`, { headers, cache: "no-store" })
     ]);
 
     if (placeRes.ok) {

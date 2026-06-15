@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import CategoriesTable from "@/components/dashboard/CategoriesTable";
+import { API_URL } from "@/lib/api";
 
 export default async function CategoriesListPage() {
   const cookieStore = await cookies();
@@ -15,8 +16,8 @@ export default async function CategoriesListPage() {
 
   try {
     const [catsRes, placesRes] = await Promise.all([
-      fetch("http://localhost:4000/api/categories?all=true", { headers, cache: "no-store" }),
-      fetch("http://localhost:4000/api/places?all=true", { headers, cache: "no-store" }),
+      fetch(`${API_URL}/categories?all=true`, { headers, cache: "no-store" }),
+      fetch(`${API_URL}/places?all=true`, { headers, cache: "no-store" }),
     ]);
 
     if (catsRes.ok) {

@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import PlaceCreateForm from "@/components/dashboard/PlaceCreateForm";
+import { API_URL } from "@/lib/api";
 
 export default async function CreatePlacePage() {
   const cookieStore = await cookies();
@@ -13,7 +14,7 @@ export default async function CreatePlacePage() {
   let initialCategories = [];
 
   try {
-    const res = await fetch("http://localhost:4000/api/categories?all=true", { headers, cache: "no-store" });
+    const res = await fetch(`${API_URL}/categories?all=true`, { headers, cache: "no-store" });
     if (res.ok) {
       const json = await res.json();
       initialCategories = json.success ? json.data : [];

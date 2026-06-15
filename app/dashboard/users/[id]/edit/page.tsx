@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import UserEditForm from "@/components/dashboard/UserEditForm";
+import { API_URL } from "@/lib/api";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -20,7 +21,7 @@ export default async function EditUserPage({ params }: PageProps) {
   let initialUser = null;
 
   try {
-    const res = await fetch(`http://localhost:4000/api/users/${userId}`, { headers, cache: "no-store" });
+    const res = await fetch(`${API_URL}/users/${userId}`, { headers, cache: "no-store" });
     if (res.ok) {
       const json = await res.json();
       initialUser = json.success ? json.data : null;

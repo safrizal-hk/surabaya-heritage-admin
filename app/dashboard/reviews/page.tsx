@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import ReviewsTable from "@/components/dashboard/ReviewsTable";
+import { API_URL } from "@/lib/api";
 
 export default async function ReviewsListPage() {
   const cookieStore = await cookies();
@@ -16,9 +17,9 @@ export default async function ReviewsListPage() {
 
   try {
     const [reviewsRes, placesRes, usersRes] = await Promise.all([
-      fetch("http://localhost:4000/api/reviews", { headers, cache: "no-store" }),
-      fetch("http://localhost:4000/api/places?all=true", { headers, cache: "no-store" }),
-      fetch("http://localhost:4000/api/users", { headers, cache: "no-store" })
+      fetch(`${API_URL}/reviews`, { headers, cache: "no-store" }),
+      fetch(`${API_URL}/places?all=true`, { headers, cache: "no-store" }),
+      fetch(`${API_URL}/users`, { headers, cache: "no-store" })
     ]);
 
     if (reviewsRes.ok) {

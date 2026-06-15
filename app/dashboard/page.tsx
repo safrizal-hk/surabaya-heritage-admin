@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import OverviewDashboard from "@/components/dashboard/OverviewDashboard";
+import { API_URL } from "@/lib/api";
 
 export default async function DashboardPage() {
   const cookieStore = await cookies();
@@ -18,11 +19,11 @@ export default async function DashboardPage() {
 
   try {
     const [placesRes, catsRes, usersRes, reviewsRes, photosRes] = await Promise.all([
-      fetch("http://localhost:4000/api/places?all=true", { headers, cache: "no-store" }),
-      fetch("http://localhost:4000/api/categories?all=true", { headers, cache: "no-store" }),
-      fetch("http://localhost:4000/api/users", { headers, cache: "no-store" }),
-      fetch("http://localhost:4000/api/reviews", { headers, cache: "no-store" }),
-      fetch("http://localhost:4000/api/places/photos/all", { headers, cache: "no-store" })
+      fetch(`${API_URL}/places?all=true`, { headers, cache: "no-store" }),
+      fetch(`${API_URL}/categories?all=true`, { headers, cache: "no-store" }),
+      fetch(`${API_URL}/users`, { headers, cache: "no-store" }),
+      fetch(`${API_URL}/reviews`, { headers, cache: "no-store" }),
+      fetch(`${API_URL}/places/photos/all`, { headers, cache: "no-store" })
     ]);
 
     if (placesRes.ok) {

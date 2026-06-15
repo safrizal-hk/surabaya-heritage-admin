@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import ReviewEditForm from "@/components/dashboard/ReviewEditForm";
+import { API_URL } from "@/lib/api";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -23,9 +24,9 @@ export default async function EditReviewPage({ params }: PageProps) {
 
   try {
     const [reviewRes, placesRes, usersRes] = await Promise.all([
-      fetch(`http://localhost:4000/api/reviews/${reviewId}`, { headers, cache: "no-store" }),
-      fetch("http://localhost:4000/api/places?all=true", { headers, cache: "no-store" }),
-      fetch("http://localhost:4000/api/users", { headers, cache: "no-store" })
+      fetch(`${API_URL}/reviews/${reviewId}`, { headers, cache: "no-store" }),
+      fetch(`${API_URL}/places?all=true`, { headers, cache: "no-store" }),
+      fetch(`${API_URL}/users`, { headers, cache: "no-store" })
     ]);
 
     if (reviewRes.ok) {

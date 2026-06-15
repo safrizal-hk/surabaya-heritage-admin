@@ -66,12 +66,6 @@ export default function LoginForm() {
     }
   };
 
-  // const handleFillDemoCredentials = () => {
-  //   setEmail("admin@surabayaheritage.com");
-  //   setPassword("admin123");
-  //   setError("");
-  // };
-
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 p-4 font-sans">
       <div className="w-full max-w-md">
@@ -149,22 +143,6 @@ export default function LoginForm() {
                 )}
               </Button>
               
-              {/* <div className="relative flex py-2 items-center w-full">
-                <div className="flex-grow border-t border-zinc-200"></div>
-                <span className="flex-shrink mx-4 text-[10px] font-bold text-zinc-400 uppercase tracking-wider">
-                  Demonstration Info
-                </span>
-                <div className="flex-grow border-t border-zinc-200"></div>
-              </div>
-
-              <Button
-                type="button"
-                variant="outline"
-                className="w-full text-xs text-zinc-600 hover:text-zinc-900 border-dashed border-zinc-300 bg-zinc-50/40 hover:bg-zinc-50 cursor-pointer"
-                onClick={handleFillDemoCredentials}
-              >
-                Autofill Administrator Credentials
-              </Button> */}
             </CardFooter>
           </form>
         </Card>
