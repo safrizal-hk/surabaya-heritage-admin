@@ -107,7 +107,7 @@ export default function OverviewDashboard({
         <Card className="bg-white border-zinc-200 shadow-2xs hover:shadow-xs transition-shadow">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-xs font-bold text-zinc-500 uppercase tracking-wider">Total Places</CardTitle>
-            <div className="p-2 bg-zinc-50 rounded-lg text-zinc-900 border border-zinc-150">
+            <div className="p-2 rounded-lg" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B", border: "1px solid #E8D0A0" }}>
               <Landmark className="h-4.5 w-4.5" />
             </div>
           </CardHeader>
@@ -121,7 +121,7 @@ export default function OverviewDashboard({
         <Card className="bg-white border-zinc-200 shadow-2xs hover:shadow-xs transition-shadow">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-xs font-bold text-zinc-500 uppercase tracking-wider">Categories</CardTitle>
-            <div className="p-2 bg-zinc-50 rounded-lg text-zinc-900 border border-zinc-150">
+            <div className="p-2 rounded-lg" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B", border: "1px solid #E8D0A0" }}>
               <Tags className="h-4.5 w-4.5" />
             </div>
           </CardHeader>
@@ -135,7 +135,7 @@ export default function OverviewDashboard({
         <Card className="bg-white border-zinc-200 shadow-2xs hover:shadow-xs transition-shadow">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-xs font-bold text-zinc-500 uppercase tracking-wider">Total Reviews</CardTitle>
-            <div className="p-2 bg-zinc-50 rounded-lg text-zinc-900 border border-zinc-150">
+            <div className="p-2 rounded-lg" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B", border: "1px solid #E8D0A0" }}>
               <MessageSquare className="h-4.5 w-4.5" />
             </div>
           </CardHeader>
@@ -149,7 +149,7 @@ export default function OverviewDashboard({
         <Card className="bg-white border-zinc-200 shadow-2xs hover:shadow-xs transition-shadow">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-xs font-bold text-zinc-500 uppercase tracking-wider">Registered Users</CardTitle>
-            <div className="p-2 bg-zinc-50 rounded-lg text-zinc-900 border border-zinc-150">
+            <div className="p-2 rounded-lg" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B", border: "1px solid #E8D0A0" }}>
               <Users className="h-4.5 w-4.5" />
             </div>
           </CardHeader>
@@ -179,13 +179,13 @@ export default function OverviewDashboard({
                 <div key={data.name} className="space-y-1">
                   <div className="flex items-center justify-between text-xs">
                     <span className="font-semibold text-zinc-700">{data.name}</span>
-                    <span className="font-bold text-zinc-950 bg-zinc-100 px-1.5 py-0.5 rounded-sm">{data.count} places</span>
+                    <span className="font-bold px-1.5 py-0.5 rounded-sm" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B" }}>{data.count} places</span>
                   </div>
                   <div className="h-3.5 w-full bg-zinc-100 rounded-full overflow-hidden border border-zinc-200/50 p-0.5">
                     <div
-                      className="h-full bg-primary rounded-full transition-all duration-500"
-                      style={{ width: `${percent}%` }}
-                    ></div>
+                    className="h-full rounded-full transition-all duration-500"
+                    style={{ width: `${percent}%`, backgroundColor: "#1B3A6B" }}
+                  ></div>
                   </div>
                 </div>
               );
@@ -220,7 +220,7 @@ export default function OverviewDashboard({
                   <div key={review.id} className="flex gap-3 text-xs border-b border-zinc-100 pb-3 last:border-0 pb-3">
                     <Avatar className="h-8 w-8 border border-zinc-200 shrink-0 mt-0.5">
                       <AvatarImage src={user.avatar} alt={user.name} />
-                      <AvatarFallback className="text-[9px] font-bold">
+                      <AvatarFallback className="text-[9px] font-bold" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B" }}>
                         {user.name[0]?.toUpperCase()}
                       </AvatarFallback>
                     </Avatar>
@@ -281,7 +281,7 @@ export default function OverviewDashboard({
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
-                <tr className="border-b border-zinc-200/80 text-zinc-400 font-bold uppercase tracking-wider">
+               <tr className="border-b border-zinc-200/80 font-bold uppercase tracking-wider" style={{ color: "#1B3A6B" }}>
                   <th className="pb-3 font-semibold">Image</th>
                   <th className="pb-3 font-semibold">Place Name</th>
                   <th className="pb-3 font-semibold">Category</th>
@@ -319,16 +319,16 @@ export default function OverviewDashboard({
                       </td>
                       <td className="py-3 pr-4">
                         {place.is_active ? (
-                          <Badge variant="success" className="gap-1 text-[10px] font-bold">
-                            <CheckCircle className="h-3 w-3" />
-                            <span>Active</span>
-                          </Badge>
-                        ) : (
-                          <Badge variant="destructive" className="gap-1 text-[10px] font-bold">
-                            <XCircle className="h-3 w-3" />
-                            <span>Inactive</span>
-                          </Badge>
-                        )}
+                            <Badge className="gap-1 text-[10px] font-bold border-0" style={{ backgroundColor: "#1B3A6B", color: "#F5E6C8" }}>
+                              <CheckCircle className="h-3 w-3" />
+                              <span>Active</span>
+                            </Badge>
+                          ) : (
+                            <Badge className="gap-1 text-[10px] font-bold border" style={{ backgroundColor: "#fee2e2", color: "#991b1b", borderColor: "#fecaca" }}>
+                              <XCircle className="h-3 w-3" />
+                              <span>Inactive</span>
+                            </Badge>
+                            )}
                       </td>
                       <td className="py-3 pr-4 text-zinc-500 font-medium">
                         <span className="flex items-center gap-1">
