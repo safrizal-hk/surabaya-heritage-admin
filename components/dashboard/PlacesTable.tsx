@@ -241,7 +241,7 @@ export default function PlacesTable({
           <div className="w-full overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
-                <tr className="border-b border-zinc-200/80 bg-zinc-50/50 text-zinc-400 font-bold uppercase tracking-wider">
+                <tr className="border-b border-zinc-200/80 font-bold uppercase tracking-wider" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B" }}>
                   <th className="p-4 font-semibold">Thumbnail</th>
                   <th className="p-4 font-semibold">Place Name</th>
                   <th className="p-4 font-semibold">Category</th>
@@ -264,7 +264,8 @@ export default function PlacesTable({
                         <img
                           src={getPrimaryPhoto(place.id)}
                           alt={place.name}
-                          className="w-12 h-12 object-cover rounded-lg border border-zinc-200 shadow-3xs"
+                          className="w-12 h-12 object-cover rounded-lg shadow-3xs"
+                          style={{ border: "1px solid #E8D0A0" }}
                         />
                       </td>
 
@@ -303,12 +304,12 @@ export default function PlacesTable({
                       {/* Status */}
                       <td className="p-4">
                         {place.is_active ? (
-                          <Badge variant="success" className="gap-1 text-[10px] font-bold">
+                          <Badge className="gap-1 text-[10px] font-bold border-0" style={{ backgroundColor: "#1B3A6B", color: "#F5E6C8" }}>
                             <CheckCircle className="h-3 w-3" />
                             <span>Active</span>
                           </Badge>
                         ) : (
-                          <Badge variant="destructive" className="gap-1 text-[10px] font-bold">
+                          <Badge className="gap-1 text-[10px] font-bold border" style={{ backgroundColor: "#fee2e2", color: "#991b1b", borderColor: "#fecaca" }}>
                             <XCircle className="h-3 w-3" />
                             <span>Inactive</span>
                           </Badge>
@@ -331,7 +332,7 @@ export default function PlacesTable({
                       <td className="p-4 text-right">
                         <div className="flex items-center justify-end gap-1.5">
                           <Link href={`/dashboard/places/${place.id}/edit`}>
-                            <Button variant="outline" size="icon" className="h-8 w-8 text-zinc-600 border-zinc-200 cursor-pointer">
+                            <Button variant="outline" size="icon" className="h-8 w-8 border-zinc-200 cursor-pointer" style={{ color: "#1B3A6B" }}>
                               <Edit className="h-3.5 w-3.5" />
                               <span className="sr-only">Edit</span>
                             </Button>
