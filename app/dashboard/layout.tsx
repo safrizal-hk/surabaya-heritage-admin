@@ -178,27 +178,28 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </nav>
 
         {/* Sidebar Footer */}
-        {/* <div className="border-t border-zinc-200/80 p-4">
+        <div className="border-t p-4" style={{ borderColor: "rgba(245, 230, 200, 0.2)" }}>
           <div className="flex items-center gap-3 px-2 py-1.5 mb-2">
-            <Avatar className="h-9 w-9 border border-zinc-200">
+            <Avatar className="h-9 w-9 border" style={{ borderColor: "rgba(245, 230, 200, 0.3)" }}>
               <AvatarImage src={currentUser.avatar_url} alt={currentUser.name} />
-              <AvatarFallback className="bg-zinc-100 text-zinc-800 text-xs font-bold">
+              <AvatarFallback style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B" }} className="text-xs font-bold">
                 {getInitials(currentUser.name)}
               </AvatarFallback>
             </Avatar>
             <div className="overflow-hidden">
-              <p className="text-xs font-semibold text-zinc-900 truncate">{currentUser.name}</p>
-              <p className="text-[10px] text-zinc-500 truncate">{currentUser.email}</p>
+              <p className="text-xs font-semibold truncate" style={{ color: "#F5E6C8" }}>{currentUser.name}</p>
+              <p className="text-[10px] truncate" style={{ color: "rgba(245, 230, 200, 0.6)" }}>{currentUser.email}</p>
             </div>
           </div>
           <button
             onClick={handleLogout}
-            className="group flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-destructive hover:bg-destructive/5 transition-colors cursor-pointer"
+            className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors cursor-pointer hover:opacity-80"
+            style={{ color: "#F87171" }}
           >
-            <LogOut className="h-4.5 w-4.5 shrink-0 text-destructive/80 group-hover:text-destructive" />
+            <LogOut className="h-4.5 w-4.5 shrink-0" style={{ color: "#F87171" }} />
             <span>Sign Out</span>
           </button>
-        </div> */}
+        </div>
       </aside>
 
       {/* Main Content Area */}
