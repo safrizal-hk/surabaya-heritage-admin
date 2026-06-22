@@ -165,7 +165,7 @@ export default function UsersTable({ initialUsers }: UsersTableProps) {
           <div className="w-full overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
-                <tr className="border-b border-zinc-200/80 bg-zinc-50/50 text-zinc-400 font-bold uppercase tracking-wider">
+                <tr className="border-b border-zinc-200/80 font-bold uppercase tracking-wider" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B" }}>
                   <th className="p-4 font-semibold">User Profile</th>
                   <th className="p-4 font-semibold">Role</th>
                   <th className="p-4 font-semibold">Joined Date</th>
