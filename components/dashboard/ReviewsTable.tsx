@@ -177,7 +177,7 @@ export default function ReviewsTable({
           <div className="w-full overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
-                <tr className="border-b border-zinc-200/80 bg-zinc-50/50 text-zinc-400 font-bold uppercase tracking-wider">
+                <tr className="border-b border-zinc-200/80 font-bold uppercase tracking-wider" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B" }}>
                   <th className="p-4 font-semibold">Reviewer</th>
                   <th className="p-4 font-semibold">Heritage Landmark</th>
                   <th className="p-4 font-semibold">Rating</th>
@@ -200,7 +200,7 @@ export default function ReviewsTable({
                           <div className="flex items-center gap-3">
                             <Avatar className="h-8 w-8 border border-zinc-200 shrink-0">
                               <AvatarImage src={user.avatar} alt={user.name} />
-                              <AvatarFallback className="text-[10px] font-bold">
+                              <AvatarFallback className="text-[10px] font-bold" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B" }}>
                                 {user.name[0]?.toUpperCase()}
                               </AvatarFallback>
                             </Avatar>
@@ -220,7 +220,7 @@ export default function ReviewsTable({
                               <Star
                                 key={i}
                                 className={`h-3.5 w-3.5 ${
-                                  i < review.rating ? "fill-amber-500" : "text-zinc-250"
+                                  i < review.rating ? "fill-amber-500 text-amber-500" : "text-zinc-200"
                                 }`}
                               />
                             ))}
@@ -251,7 +251,8 @@ export default function ReviewsTable({
                               <Button
                                 variant="outline"
                                 size="icon"
-                                className="h-8 w-8 text-zinc-600 border-zinc-200 cursor-pointer"
+                                className="h-8 w-8 border-zinc-200 cursor-pointer"
+                                style={{ color: "#1B3A6B" }}
                               >
                                 <Edit className="h-3.5 w-3.5" />
                                 <span className="sr-only">Edit</span>
