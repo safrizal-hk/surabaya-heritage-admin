@@ -127,7 +127,7 @@ interface DBContextType {
 
 const DBContext = createContext<DBContextType | undefined>(undefined);
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000/api";console.log("API_URL:", API_URL);
 
 export function DBProvider({ children }: { children: ReactNode }) {
   const [categories, setCategories] = useState<Category[]>([]);

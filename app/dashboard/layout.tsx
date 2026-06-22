@@ -109,17 +109,18 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
       {/* Sidebar Component */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r border-zinc-200/80 bg-white transition-transform duration-200 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r transition-transform duration-200 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 ${
+        sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
+        style={{ backgroundColor: "#1B3A6B", borderColor: "rgba(245, 230, 200, 0.2)" }}
       >
         {/* Sidebar Header */}
-        <div className="flex h-16 items-center justify-between px-6 border-b border-zinc-200/80">
+        <div className="flex h-16 items-center justify-between px-6 border-b" style={{ borderColor: "rgba(245, 230, 200, 0.2)" }}>
           <Link href="/dashboard" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-zinc-950 rounded-lg flex items-center justify-center shadow-sm">
-              <Landmark className="h-4.5 w-4.5 text-white" />
+            <div className="w-8 h-8 rounded-lg ..." style={{ backgroundColor: "#F5E6C8" }}>
+            <Landmark className="h-4.5 w-4.5" style={{ color: "#1B3A6B" }} />
             </div>
-            <span className="font-bold text-zinc-950 tracking-tight">Surabaya Heritage</span>
+            <span className="font-bold tracking-tight" style={{ color: "#F5E6C8" }}>Surabaya Heritage</span>
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}
@@ -137,16 +138,15 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               <div key={item.name} className="space-y-1">
                 <Link
                   href={item.href}
-                  className={`group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-                    active
-                      ? "bg-zinc-100 text-zinc-950 font-semibold"
-                      : "text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900"
-                  }`}
+                  className="group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors"
+                  style={active
+                    ? { backgroundColor: "rgba(245, 230, 200, 0.2)", color: "#F5E6C8", fontWeight: 600 }
+                    : { color: "rgba(245, 230, 200, 0.7)" }
+                  }
                 >
                   <item.icon
-                    className={`h-4.5 w-4.5 shrink-0 ${
-                      active ? "text-zinc-950" : "text-zinc-400 group-hover:text-zinc-600"
-                    }`}
+                    className="h-4.5 w-4.5 shrink-0"
+                    style={active ? { color: "#F5E6C8" } : { color: "rgba(245, 230, 200, 0.5)" }}
                   />
                   <span>{item.name}</span>
                 </Link>

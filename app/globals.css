@@ -2,35 +2,42 @@
 @import "leaflet/dist/leaflet.css";
 
 :root {
+  /* Navy */
+  --primary: 218 65% 25%;
+  --primary-foreground: 45 60% 92%;
+
+  /* Butter/cream */
+  --accent: 45 60% 92%;
+  --accent-foreground: 218 65% 25%;
+
   --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
+  --foreground: 218 40% 15%;
 
   --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
+  --card-foreground: 218 40% 15%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
+  --popover-foreground: 218 40% 15%;
 
-  --primary: 240 5.9% 10%;
-  --primary-foreground: 0 0% 98%;
+  --secondary: 45 50% 95%;
+  --secondary-foreground: 218 65% 25%;
 
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
-
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-
-  --accent: 240 4.8% 95.9%;
-  --accent-foreground: 240 5.9% 10%;
+  --muted: 45 30% 94%;
+  --muted-foreground: 218 20% 45%;
 
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 240 5.9% 10%;
+  --border: 218 20% 88%;
+  --input: 218 20% 88%;
+  --ring: 218 65% 25%;
 
   --radius: 0.5rem;
+
+  /* Custom brand tokens */
+  --navy: #1B3A6B;
+  --butter: #F5E6C8;
+  --butter-dark: #E8D0A0;
 }
 
 @theme {
@@ -65,7 +72,7 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-  
+
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular;
 }
@@ -77,14 +84,12 @@ body {
   min-height: 100vh;
 }
 
-/* Custom styles for Leaflet to match our clean interface */
 .leaflet-container {
   font-family: inherit;
   border-radius: var(--radius);
   border: 1px solid hsl(var(--border));
 }
 
-/* Custom scrollbar for premium feel */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
