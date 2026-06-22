@@ -102,63 +102,63 @@ export default function OverviewDashboard({
       </div>
 
       {/* Grid of stats */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {/* Total Places */}
-        <Card className="bg-white border-zinc-200 shadow-2xs hover:shadow-xs transition-shadow">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-xs font-bold text-zinc-500 uppercase tracking-wider">Total Places</CardTitle>
-            <div className="p-2 rounded-lg" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B", border: "1px solid #E8D0A0" }}>
-              <Landmark className="h-4.5 w-4.5" />
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-extrabold tracking-tight">{places.length}</div>
-            <p className="text-[10px] text-zinc-400 font-semibold mt-1">Heritage locations catalogued</p>
-          </CardContent>
-        </Card>
-
-        {/* Total Categories */}
-        <Card className="bg-white border-zinc-200 shadow-2xs hover:shadow-xs transition-shadow">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-xs font-bold text-zinc-500 uppercase tracking-wider">Categories</CardTitle>
-            <div className="p-2 rounded-lg" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B", border: "1px solid #E8D0A0" }}>
-              <Tags className="h-4.5 w-4.5" />
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-extrabold tracking-tight">{categories.length}</div>
-            <p className="text-[10px] text-zinc-400 font-semibold mt-1">Place categories defined</p>
-          </CardContent>
-        </Card>
-
-        {/* Total Reviews */}
-        <Card className="bg-white border-zinc-200 shadow-2xs hover:shadow-xs transition-shadow">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-xs font-bold text-zinc-500 uppercase tracking-wider">Total Reviews</CardTitle>
-            <div className="p-2 rounded-lg" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B", border: "1px solid #E8D0A0" }}>
-              <MessageSquare className="h-4.5 w-4.5" />
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-extrabold tracking-tight">{reviews.length}</div>
-            <p className="text-[10px] text-zinc-400 font-semibold mt-1">Submitted mobile reviews</p>
-          </CardContent>
-        </Card>
-
-        {/* Total Users */}
-        <Card className="bg-white border-zinc-200 shadow-2xs hover:shadow-xs transition-shadow">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-xs font-bold text-zinc-500 uppercase tracking-wider">Registered Users</CardTitle>
-            <div className="p-2 rounded-lg" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B", border: "1px solid #E8D0A0" }}>
-              <Users className="h-4.5 w-4.5" />
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-extrabold tracking-tight">{users.length}</div>
-            <p className="text-[10px] text-zinc-400 font-semibold mt-1">Mobile application users</p>
-          </CardContent>
-        </Card>
+<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+  {/* Total Places — Navy */}
+  <Card className="border-0 shadow-md hover:shadow-lg transition-shadow" style={{ backgroundColor: "#1B3A6B" }}>
+    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+      <CardTitle className="text-xs font-bold uppercase tracking-wider" style={{ color: "rgba(245,230,200,0.7)" }}>Total Places</CardTitle>
+      <div className="p-2 rounded-lg" style={{ backgroundColor: "rgba(245,230,200,0.15)", color: "#F5E6C8" }}>
+        <Landmark className="h-4.5 w-4.5" />
       </div>
+    </CardHeader>
+    <CardContent>
+      <div className="text-2xl font-extrabold tracking-tight" style={{ color: "#F5E6C8" }}>{places.length}</div>
+      <p className="text-[10px] font-semibold mt-1" style={{ color: "rgba(245,230,200,0.6)" }}>Heritage locations catalogued</p>
+    </CardContent>
+  </Card>
+
+  {/* Categories — Butter */}
+  <Card className="border shadow-md hover:shadow-lg transition-shadow" style={{ backgroundColor: "#F5E6C8", borderColor: "#E8D0A0" }}>
+    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+      <CardTitle className="text-xs font-bold uppercase tracking-wider" style={{ color: "rgba(27,58,107,0.6)" }}>Categories</CardTitle>
+      <div className="p-2 rounded-lg" style={{ backgroundColor: "rgba(27,58,107,0.1)", color: "#1B3A6B" }}>
+        <Tags className="h-4.5 w-4.5" />
+      </div>
+    </CardHeader>
+    <CardContent>
+      <div className="text-2xl font-extrabold tracking-tight" style={{ color: "#1B3A6B" }}>{categories.length}</div>
+      <p className="text-[10px] font-semibold mt-1" style={{ color: "rgba(27,58,107,0.5)" }}>Place categories defined</p>
+    </CardContent>
+  </Card>
+
+  {/* Total Reviews — Navy medium */}
+  <Card className="border-0 shadow-md hover:shadow-lg transition-shadow" style={{ backgroundColor: "#2a5298" }}>
+    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+      <CardTitle className="text-xs font-bold uppercase tracking-wider" style={{ color: "rgba(245,230,200,0.7)" }}>Total Reviews</CardTitle>
+      <div className="p-2 rounded-lg" style={{ backgroundColor: "rgba(245,230,200,0.15)", color: "#F5E6C8" }}>
+        <MessageSquare className="h-4.5 w-4.5" />
+      </div>
+    </CardHeader>
+    <CardContent>
+      <div className="text-2xl font-extrabold tracking-tight" style={{ color: "#F5E6C8" }}>{reviews.length}</div>
+      <p className="text-[10px] font-semibold mt-1" style={{ color: "rgba(245,230,200,0.6)" }}>Submitted mobile reviews</p>
+    </CardContent>
+  </Card>
+
+  {/* Registered Users — Butter dark */}
+  <Card className="border shadow-md hover:shadow-lg transition-shadow" style={{ backgroundColor: "#E8D0A0", borderColor: "#D4B882" }}>
+    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+      <CardTitle className="text-xs font-bold uppercase tracking-wider" style={{ color: "rgba(27,58,107,0.6)" }}>Registered Users</CardTitle>
+      <div className="p-2 rounded-lg" style={{ backgroundColor: "rgba(27,58,107,0.1)", color: "#1B3A6B" }}>
+        <Users className="h-4.5 w-4.5" />
+      </div>
+    </CardHeader>
+    <CardContent>
+      <div className="text-2xl font-extrabold tracking-tight" style={{ color: "#1B3A6B" }}>{users.length}</div>
+      <p className="text-[10px] font-semibold mt-1" style={{ color: "rgba(27,58,107,0.5)" }}>Mobile application users</p>
+    </CardContent>
+  </Card>
+</div>
 
       {/* Category distribution visual chart */}
       <Card className="bg-white border-zinc-200 shadow-2xs">
