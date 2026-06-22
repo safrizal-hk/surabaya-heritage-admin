@@ -182,9 +182,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <div className="flex items-center gap-3 px-2 py-1.5 mb-2">
             <Avatar className="h-9 w-9 border" style={{ borderColor: "rgba(245, 230, 200, 0.3)" }}>
               <AvatarImage src={currentUser.avatar_url} alt={currentUser.name} />
-              <AvatarFallback style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B" }} className="text-xs font-bold">
+              <AvatarFallback 
+                className="text-[10px] font-bold"
+                style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B" }}
+              >
                 {getInitials(currentUser.name)}
-              </AvatarFallback>
+            </AvatarFallback>
             </Avatar>
             <div className="overflow-hidden">
               <p className="text-xs font-semibold truncate" style={{ color: "#F5E6C8" }}>{currentUser.name}</p>
@@ -205,7 +208,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* Main Content Area */}
       <div className="flex flex-1 flex-col min-w-0 overflow-hidden">
         {/* Topbar Header */}
-        <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-zinc-200/80 bg-white px-6 shadow-2xs">
+        <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b bg-white px-6 shadow-2xs" style={{ borderColor: "#E8D0A0" }}>
           <div className="flex items-center gap-4">
             <button
               onClick={() => setSidebarOpen(true)}
