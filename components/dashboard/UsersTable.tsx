@@ -186,7 +186,7 @@ export default function UsersTable({ initialUsers }: UsersTableProps) {
                         <div className="flex items-center gap-3">
                           <Avatar className="h-9 w-9 border border-zinc-200 shrink-0">
                             <AvatarImage src={user.avatar_url} alt={user.name} />
-                            <AvatarFallback className="text-[10px] font-bold bg-zinc-100 text-zinc-800">
+                            <AvatarFallback className="text-[10px] font-bold" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B" }}>
                               {getInitials(user.name)}
                             </AvatarFallback>
                           </Avatar>
@@ -204,15 +204,15 @@ export default function UsersTable({ initialUsers }: UsersTableProps) {
                         </div>
                       </td>
 
-                      {/* Role Badge */}
+                     {/* Role Badge */}
                       <td className="p-4">
                         {user.role === "admin" ? (
-                          <Badge className="gap-1 text-[10px] font-bold bg-zinc-950 text-white">
+                          <Badge className="gap-1 text-[10px] font-bold border-0" style={{ backgroundColor: "#1B3A6B", color: "#F5E6C8" }}>
                             <ShieldCheck className="h-3 w-3" />
                             <span>Admin</span>
                           </Badge>
                         ) : (
-                          <Badge variant="secondary" className="gap-1 text-[10px] font-bold">
+                          <Badge className="gap-1 text-[10px] font-bold border" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B", borderColor: "#E8D0A0" }}>
                             <UserCheck className="h-3 w-3" />
                             <span>User</span>
                           </Badge>
