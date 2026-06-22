@@ -160,7 +160,7 @@ export default function CategoriesTable({
           <div className="w-full overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
-                <tr className="border-b border-zinc-200/80 bg-zinc-50/50 text-zinc-400 font-bold uppercase tracking-wider">
+                <tr className="border-b border-zinc-200/80 font-bold uppercase tracking-wider" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B" }}>
                   <th className="p-4 font-semibold w-24 text-center">Icon</th>
                   <th className="p-4 font-semibold">Category Name</th>
                   <th className="p-4 font-semibold">Linked Places</th>
@@ -179,7 +179,7 @@ export default function CategoriesTable({
                       >
                         {/* Category Icon */}
                         <td className="p-4 text-center">
-                          <div className="inline-flex p-2 bg-zinc-100 text-zinc-800 rounded-md border border-zinc-200 shadow-3xs">
+                          <div className="inline-flex p-2 rounded-md shadow-3xs" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B", border: "1px solid #E8D0A0" }}>
                             {renderIcon(cat.icon)}
                           </div>
                         </td>
@@ -191,7 +191,7 @@ export default function CategoriesTable({
 
                         {/* Places Count */}
                         <td className="p-4 text-zinc-600 font-semibold">
-                          <span className="bg-zinc-100 text-zinc-800 px-2 py-0.5 rounded-sm border border-zinc-200/30 text-xs">
+                          <span className="px-2 py-0.5 rounded-sm text-xs font-semibold" style={{ backgroundColor: "#F5E6C8", color: "#1B3A6B", border: "1px solid #E8D0A0" }}>
                             {count} {count === 1 ? "place" : "places"}
                           </span>
                         </td>
@@ -215,7 +215,8 @@ export default function CategoriesTable({
                               <Button
                                 variant="outline"
                                 size="icon"
-                                className="h-8 w-8 text-zinc-600 border-zinc-200 cursor-pointer"
+                                className="h-8 w-8 border-zinc-200 cursor-pointer"
+                                style={{ color: "#1B3A6B" }}
                               >
                                 <Edit className="h-3.5 w-3.5" />
                                 <span className="sr-only">Edit</span>
