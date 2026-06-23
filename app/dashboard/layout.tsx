@@ -117,9 +117,14 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         {/* Sidebar Header */}
         <div className="flex h-16 items-center justify-between px-6 border-b" style={{ borderColor: "rgba(245, 230, 200, 0.2)" }}>
           <Link href="/dashboard" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg ..." style={{ backgroundColor: "#F5E6C8" }}>
-            <Landmark className="h-4.5 w-4.5" style={{ color: "#1B3A6B" }} />
-            </div>
+          <div className="flex items-center justify-center w-9 h-9 rounded-lg shadow-sm"
+               style={{ backgroundColor: "#F5E6C8" }}
+          >
+          <Landmark
+             className="w-5 h-5"
+             style={{ color: "#1B3A6B" }}
+         />
+         </div>
             <span className="font-bold tracking-tight" style={{ color: "#F5E6C8" }}>Surabaya Heritage</span>
           </Link>
           <button
